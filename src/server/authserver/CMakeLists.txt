@@ -90,3 +90,11 @@ if (USE_COREPCH)
 endif()
 
 CU_RUN_HOOK("AFTER_AUTHSERVER_CMAKE")
+
+# Custom
+if (${COPY_DEBUG_CONF})
+    add_custom_command(TARGET authserver
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/conf/debug/authserver.conf ${CMAKE_BINARY_DIR}/bin/$(ConfigurationName)/
+    )
+endif()

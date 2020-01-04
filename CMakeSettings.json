@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "x64-Debug",
+            "generator": "Visual Studio 15 2017 Win64",
+            "configurationType": "Debug",
+            "inheritEnvironments": [
+                "msvc_x64"
+            ],
+            "buildRoot": "D:\\projects\\azerothcore-wotlk\\target\\build\\${name}",
+            "installRoot": "D:\\projects\\azerothcore-wotlk\\target\\install\\${name}",
+            "cmakeCommandArgs": "-DCOPY_DEBUG_CONF=true -DMYSQL_INCLUDE_DIR=\"C:\\Program Files\\MySQL\\MySQL Server 5.6\\include\" -DMYSQL_LIBRARY=\"C:\\Program Files\\MySQL\\MySQL Server 5.6\\lib\\libmysql.lib\" -DMYSQL_DLL=\"C:\\Program Files\\MySQL\\MySQL Server 5.6\\lib\\libmysql.dll\"",
+            "buildCommandArgs": "",
+            "ctestCommandArgs": ""
+        }
+    ]
+}

@@ -129,3 +129,17 @@ add_definitions(-DCONFIG_FILE_LIST=$<1:"${CONFIG_LIST}">)
 # end handle config file
 
 CU_RUN_HOOK("AFTER_WORLDSERVER_CMAKE")
+
+# Custom
+if (${COPY_DEBUG_CONF})
+    add_custom_command(TARGET worldserver
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/conf/debug/worldserver.conf ${CMAKE_BINARY_DIR}/bin/$(ConfigurationName)/
+    )
+endif()
+if (EXISTS ${MYSQL_DLL})
+    add_custom_command(TARGET worldserver
+        POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy ${MYSQL_DLL} ${CMAKE_BINARY_DIR}/bin/$(ConfigurationName)/
+    )
+endif()
